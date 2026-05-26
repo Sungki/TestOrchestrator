@@ -33,9 +33,8 @@ The Solution: Constructed an interface-driven Hardware Abstraction Layer (`ITest
 
 To fulfill logging and reliability auditing parameters, the architecture embeds a decoupled Repository Pattern(`ITestResultRepository`) interacting with a structured telemetry relational matrix:
 
-
+```csharp
 public class TestResultEntity
-
 {
     public required string RecordId { get; set; }        // Primary Key (UUID)
     public required string TestId { get; set; }          // Foreign Key mapping
@@ -46,6 +45,7 @@ public class TestResultEntity
     public DateTime Timestamp { get; set; }             // Telemetry ingestion timestamp
     public string? ErrorMessage { get; set; }            // Extracted hardware exception stack
 }
+```
 
 The use of `ConcurrentBag<T>` in the mock repository layer guarantees non-blocking data storage writes under high-concurrency stress environments.
 
@@ -55,11 +55,11 @@ The use of `ConcurrentBag<T>` in the mock repository layer guarantees non-blocki
 
 ## Prerequisites
 
-[.NET 8.0 / 9.0 / 10.0 SDK](https://microsoft.comdownload) or higher.
+[.NET 8.0 / 9.0 / 10.0 SDK](https://microsoft.com/download) or higher.
 Visual Studio 2022 / 2026 or Visual Studio Code.
 
 
-## Compilation \& Execution
+## Compilation & Execution
 
 Clone the project, traverse into the root source directories, and fire up the multi-node simulation layer using the .NET CLI
 
