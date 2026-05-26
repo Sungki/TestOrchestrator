@@ -29,7 +29,7 @@ The Solution: Constructed an interface-driven Hardware Abstraction Layer (`ITest
 
 
 
-# 4. Storage Schemas \& Reliability Layer
+# 3. Storage Schemas \& Reliability Layer
 
 To fulfill logging and reliability auditing parameters, the architecture embeds a decoupled Repository Pattern(`ITestResultRepository`) interacting with a structured telemetry relational matrix:
 
@@ -50,12 +50,12 @@ public class TestResultEntity
 The use of `ConcurrentBag<T>` in the mock repository layer guarantees non-blocking data storage writes under high-concurrency stress environments.
 
 
-# 5. Getting Started & Verification
+# 4. Getting Started & Verification
 
 
 ## Prerequisites
 
-[.NET 8.0 SDK / .NET 9.0 SDK](https://microsoft.comdownload) or higher.
+[.NET 8.0 / 9.0 / 10.0 SDK](https://microsoft.comdownload) or higher.
 Visual Studio 2022 / 2026 or Visual Studio Code.
 
 
@@ -69,7 +69,7 @@ Clone the project, traverse into the root source directories, and fire up the mu
 When launched, the console application sets up a simulation tracking 100 concurrent virtual machines (50 Xbox Nodes, 50 PS5 Nodes). It injects 80 comprehensive test suites, simulating a dense parallel automated production load.
 
 
-# 6. Technical Justifications
+# 5. Technical Justifications
 Dependency Injection: The orchestrator targets the abstract `ITestResultRepository` rather than a direct database stack, making it pluggable into MongoDB, PostgreSQL, or cloud native services with zero core alterations.
 
 TPL Parallel Architecture: Utilizing `Task.Run` combined with `async/await` guarantees optimal CPU thread-pool scaling, bypassing traditional blocking and operating system context-switch penalties.
