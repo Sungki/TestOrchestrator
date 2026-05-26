@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace EADistributedTestFarmPoC
+namespace DistributedTestFarm
 {
     // =================================================================================
     // SYSTEM ENTRY POINT & INITIALIZATION
